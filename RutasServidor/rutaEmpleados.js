@@ -28,7 +28,7 @@ rutaEmpleados.get('/:id', (req, res)=>{
 
 // INSERT
 rutaEmpleados.post('/', (req, res)=>{
-    const {nomEmpleado, apellEmpleado, mail, id, pass, puesto} = req.body;
+    const {id, nomEmpleado, apellEmpleado, mail, pass, puesto} = req.body;
     let sql = `INSERT INTO empleados(id_empleado, nombre_empleado, apellido_empleado, email_empleado, password_empleado, puesto_empleado) `+
     `VALUES('${id}', '${nomEmpleado}', '${apellEmpleado}', '${mail}', '${pass}', '${puesto}')`
     conexion.query(sql, (error, filas, campos)=>{
