@@ -8,7 +8,6 @@ const conexion = require('../Config/conexionMySQL');
 // SELECT
 rutaReservacion.get('/', (req, res) => {
     let sql = 'SELECT * FROM reservacion';
-
     conexion.query(sql,(error, filas, campos) => {
         if(error) throw error;
         else

@@ -4,7 +4,6 @@ const conexion = require('../Config/conexionMySQL');
 // SELECT
 rutaEmpleados.get('/', (req, res) => {
     let sql = 'SELECT * FROM empleados';
-
     conexion.query(sql,(error,filas,campos) => {
         if(error) throw error;
         else

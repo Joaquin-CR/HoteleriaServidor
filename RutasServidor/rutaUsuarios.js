@@ -3,7 +3,6 @@ const conexion = require('../Config/conexionMySQL');
 
 rutaUsuarios.get('/', (req, res) => {
     let sql = 'SELECT * FROM usuarios';
-
     conexion.query(sql,(error,filas,campos) => {
         if(error) throw error;
         else
@@ -16,7 +15,7 @@ rutaUsuarios.get('/', (req, res) => {
 // SINGLE SELECT
 rutaUsuarios.get('/:id', (req, res)=>{
     const {id} = req.params
-    let sql = 'SELECT * FROM usuarios WHERE id_user = ?' //Consulta a la base de datos
+    let sql = 'SELECT * FROM usuarios WHERE userN_user = ?' //Consulta a la base de datos
     conexion.query(sql,[id],(error,filas,campos)=>{
         if(error) throw error;
         else
