@@ -5,6 +5,7 @@ const conexion = require('../Config/conexionMySQL');
 //     res.send("La ruta principal funciona");
 // });
 
+// SELECT
 rutaReservacion.get('/', (req, res) => {
     let sql = 'SELECT * FROM reservacion';
 
