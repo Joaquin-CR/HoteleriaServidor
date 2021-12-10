@@ -16,6 +16,8 @@ app.set('port', port);
 
 /* ********* CONFIGURAR RUTAS ********* */ 
 app.use('/apiReservacion', require('./RutasServidor/rutasReservacion'));
+app.use('/apiUsuarios', require('./RutasServidor/rutaUsuarios'));
+app.use('/apiEmpleados', require('./RutasServidor/rutaEmpleados'));
 
 // INICIAR EXPRESS COMO SERVIDOR
 app.listen(app.get('port'),(error) => {
