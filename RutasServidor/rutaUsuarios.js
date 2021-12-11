@@ -23,7 +23,33 @@ rutaUsuarios.get('/:id', (req, res)=>{
             res.json(filas)
         }
     })
-})
+});
+
+// SELECT PARA EL ID DEL USUARIO
+// rutaUsuarios.get('/:id', (req, res)=>{
+//     const {id} = req.params
+//     let sql = 'SELECT id_user FROM usuarios WHERE userN_user = ?' //Consulta a la base de datos
+//     conexion.query(sql,[id],(error,filas,campos)=>{
+//         if(error) throw error;
+//         else
+//         {
+//             res.json(filas)
+//         }
+//     })
+// });
+
+// // SELECT PARA LA CONTRASEÑA DEL USUARIO
+// rutaUsuarios.get('/:user/:id', (req, res)=>{
+//     const {user, id} = req.params
+//     let sql = 'SELECT password_user FROM usuarios WHERE id_user = ?' //Consulta a la base de datos
+//     conexion.query(sql,[user, id],(error,filas,campos)=>{
+//         if(error) throw error;
+//         else
+//         {
+//             res.json(filas)
+//         }
+//     })
+// });
 
 //  INSERT
 rutaUsuarios.post('/', (req, res)=>{
