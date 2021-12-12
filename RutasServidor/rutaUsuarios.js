@@ -13,22 +13,9 @@ rutaUsuarios.get('/', (req, res) => {
 });
 
 // SINGLE SELECT
-// rutaUsuarios.get('/:id', (req, res)=>{
-//     const {id} = req.params
-//     let sql = 'SELECT * FROM usuarios WHERE userN_user = ?' //Consulta a la base de datos
-//     conexion.query(sql,[id],(error,filas,campos)=>{
-//         if(error) throw error;
-//         else
-//         {
-//             res.json(filas)
-//         }
-//     })
-// });
-
-// SELECT PARA EL ID DEL USUARIO Y LA CONTRASEÑA
 rutaUsuarios.get('/:id', (req, res)=>{
     const {id} = req.params
-    let sql = 'SELECT id_user, password_user FROM usuarios WHERE userN_user = ?' //Consulta a la base de datos
+    let sql = 'SELECT * FROM usuarios WHERE userN_user = ?' //Consulta a la base de datos
     conexion.query(sql,[id],(error,filas,campos)=>{
         if(error) throw error;
         else
