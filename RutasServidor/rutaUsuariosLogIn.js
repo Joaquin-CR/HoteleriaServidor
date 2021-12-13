@@ -14,4 +14,19 @@ rutaUsuarios.get('/:id', (req, res)=>{
     })
 });
 
+// UPDATE DE LA CONTRASEÑA
+rutaUsuarios.put('/:id', (req, res)=>{
+    const {id} = req.params
+    const {pass} = req.body;
+    let sql = `UPDATE usuarios SET password_user = '${pass}',
+                WHERE id_user = '${id}'`
+    conexion.query(sql, (error, filas,campos)=>{
+        if(error) throw error;
+        else
+        {
+            res.json({status: 'usuario actualizado'})
+        }
+    });
+});
+
 module.exports = rutaUsuarios;

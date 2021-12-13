@@ -47,7 +47,6 @@ rutaUsuarios.put('/:id', (req, res)=>{
     let sql = `UPDATE usuarios SET apellido_user = '${apellUser}',
                 userN_user = '${userN}',
                 mail_user = '${mail}',
-                password_user = '${pass}',
                 cel_user = '${cell}'
                 WHERE id_user = '${id}'`
     conexion.query(sql, (error, filas,campos)=>{
